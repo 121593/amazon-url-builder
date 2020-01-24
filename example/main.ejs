@@ -1,0 +1,86 @@
+<% const pageTitle = 'AmazonUrlBuilder test page' -%>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+
+<h1><%= pageTitle %></h1>
+<p>Project hosted <a href="https://github.com/121593/amazon-url-builder">there</a></p>
+
+<% if (typeof error !== 'undefined' && error) { %>
+    <p style="color: darkred"><%= error %></p>
+<% } -%>
+
+<% if (typeof result !== 'undefined' && result) { %>
+    <div style="background-color: greenyellow; padding: 1em; margin-bottom: 1em">
+        <a href="<%= result %>"><%= result %></a>
+    </div>
+<% } %>
+
+<form action="/generateLookupUrl" method="post">
+    <fieldset>
+        <legend>Generate search page URL</legend>
+        <label>
+            Search term
+            <input type="string" name="searchTerm" placeholder="something" required/>
+        </label>
+        <label>
+            Category "i" parameter
+            <input type="string" name="categoryI" placeholder="optional"/>
+        </label>
+        <button type="submit">generate</button>
+    </fieldset>
+</form>
+
+<form action="/generateProductUrl" method="post">
+    <fieldset>
+        <legend>Generate Product URL</legend>
+        <label>
+            Product ID
+            <input type="string" name="productId" placeholder="abcxx"/>
+        </label>
+        <button type="submit">generate</button>
+    </fieldset>
+</form>
+
+<form action="/generateNodeUrl" method="post">
+    <fieldset>
+        <legend>Generate Node URL</legend>
+        <label>
+            Node Id
+            <select name="nodeId">
+                <% for(let catName in categories) { %>
+                    <option value="<%= categories[catName].id %>"><%= catName %></option>
+                <% } %>
+            </select>
+        </label>
+        <button type="submit">generate</button>
+    </fieldset>
+</form>
+
+<form action="/generateNodeBestSellersUrl" method="post">
+    <fieldset>
+        <legend>Generate Node BestSellers URL</legend>
+        <label>
+            Node slug
+            <select name="nodeSlug">
+                <% for(let catName in categories) { %>
+                    <option value="<%= categories[catName].slug %>"><%= catName %></option>
+                <% } %>
+            </select>
+        </label>
+        <button type="submit">generate</button>
+    </fieldset>
+</form>
+
+<footer style="padding-top: 3em">
+    using <a href="https://oxal.org/projects/sakura/">sakura css theme</a>
+</footer>
+
+</body>
+</html>
