@@ -4,3 +4,4 @@ example
 test
 .nyc_output
 *.bak
+.gitlab-ci.yml
