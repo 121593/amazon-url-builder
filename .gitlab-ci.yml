@@ -41,6 +41,6 @@ release:
   only:
     - master
   before_script:
-    - npm install -g semantic-release@">15.8.0 <16.0.0" @semantic-release/gitlab-config @semantic-release/npm
+    - npm install -g semantic-release debug @semantic-release/commit-analyzer @semantic-release/github @semantic-release/npm @semantic-release/release-notes-generator
   script:
     - npm run release
