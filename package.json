@@ -4,6 +4,11 @@
     "email": "97a4389e-260e-44f6-a9c7-1008965816e0@anonaddy.me",
     "url": "https://github.com/121593"
   },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/121593/amazon-url-builder/issues"
   },
@@ -14,19 +19,18 @@
   },
   "description": "Builds parametrized Amazon URIs",
   "devDependencies": {
-    "ava": "^2.4.0",
-    "commitizen": "^4.0.3",
-    "ejs": "^3.0.1",
-    "eslint": "^6.7.2",
-    "nodemon": "^2.0.2",
-    "nyc": "^14.1.1",
-    "standard": "^14.3.1"
-  },
-  "eslintConfig": {
-    "extends": "standard",
-    "parserOptions": {
-      "ecmaVersion": 6
-    }
+    "@types/node": "^14.18.12",
+    "ava": "^3.15.0",
+    "commitizen": "^4.2.4",
+    "ejs": "^3.1.6",
+    "eslint": "^8.9.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "esm": "^3.2.25",
+    "nodemon": "^2.0.15",
+    "nyc": "^15.1.0"
   },
   "homepage": "https://github.com/121593/amazon-url-builder",
   "keywords": [
@@ -56,5 +60,5 @@
     "release": "semantic-release -e @semantic-release/gitlab-config",
     "test": "ava"
   },
-  "version": "0.0.2"
+  "version": "0.1.0"
 }

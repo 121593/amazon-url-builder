@@ -1,4 +1,4 @@
-image: node:12
+image: node:14
 
 variables:
   COVERALLS_SERVICE_NAME: "gitlab-ci"
